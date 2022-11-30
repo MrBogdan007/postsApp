@@ -3,7 +3,7 @@ import axios from "axios";
 import { Post } from "../../types/posts";
 
 const initialState: Post[] = []
-export const fetchPosts = createAsyncThunk("users", async () => {
+export const fetchPosts = createAsyncThunk("posts", async () => {
   const result = await axios.get("https://jsonplaceholder.typicode.com/posts");
   const data = result.data;
   return data;

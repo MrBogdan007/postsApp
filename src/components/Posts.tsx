@@ -1,27 +1,48 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../redux/hooks"
 import { fetchPosts } from "../redux/reducers/posts";
+
 import { fetchUsers } from "../redux/reducers/users";
+import SinglePost from "./SinglePost";
 
 const Posts = () => {
+  
   const dispatch = useAppDispatch();
   const posts = useAppSelector(state => state.postReducer);
-  useEffect(() => {
-    dispatch(fetchPosts());
-  },[])
+  console.log(posts);
+  
+  const users = useAppSelector(state => state.userReducer);
+  const [search, setSearch] = useState("");
+  
+
+  
+  const onInput = (e:React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+  }
+  const postList = posts.filter(item => item.title.includes(search))
+  console.log(postList);
+return(
+  <>
+  <div className="search">
+  <input type="text" onChange={(e) => onInput(e)} placeholder="Search for a post" />
+  </div>
+  <div className="posts container">
+  {users.length > 0 ? postList.map((post) => {
+
+    const madeBy = users.find(user => user.id  === post.userId )!
+    
+    
   return (
-    <div>
-      {
-        posts.map(post => 
-          <div key={post.id}>
-            <div>{post.title}</div>
-            <div>{post.body}</div>
-            <div></div>
-          </div>
-          )
-      }
-    </div>
+    
+      <SinglePost key={post.id} madeby={madeBy} post={post}/>
+   
+    
   )
+}): 'Loading ... '
+}
+</div>
+</>
+)
 }
 
 export default Posts

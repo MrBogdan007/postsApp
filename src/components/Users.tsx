@@ -4,9 +4,7 @@ import { fetchUsers } from "../redux/reducers/users";
 
 const Users = () => {
   const dispatch = useAppDispatch();
-  useEffect(() => {
-    dispatch(fetchUsers());
-  },[])
+
   const users = useAppSelector(state => state.userReducer);
   return (
     <div>

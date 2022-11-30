@@ -1,0 +1,18 @@
+@use '../variables'
+.posts
+   display: flex
+   justify-content: space-between
+   flex-wrap: wrap
+.post
+   width: 400px
+   margin-top: 40px
+   &-item
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      &__title
+         margin-bottom: 10px
+         font-size: 18px
+         font-weight: bold
+         color: variables.$text-color
+

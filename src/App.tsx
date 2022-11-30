@@ -6,11 +6,17 @@ import Posts from './components/Posts';
 import Users from './components/Users';
 import Navbar from './components/navigation/Navbar';
 import { useEffect } from 'react';
-import { useAppDispatch } from './redux/hooks';
-import { fetchPosts } from './redux/reducers/posts';
+import { useAppDispatch, useAppSelector } from './redux/hooks';
 import { fetchUsers } from './redux/reducers/users';
+import { fetchPosts } from './redux/reducers/posts';
+
 function App() {
   const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(fetchPosts());
+    dispatch(fetchUsers());
+  },[])
+
   return (
     <div className="App">
       <header className="App-header">

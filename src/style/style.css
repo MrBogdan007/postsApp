@@ -1,3 +1,14 @@
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -17,4 +28,26 @@
 .header__logo {
   display: flex;
   justify-content: flex-start;
+}
+
+.posts {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.post {
+  width: 400px;
+  margin-top: 40px;
+}
+.post-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.post-item__title {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #0059FF;
 }
