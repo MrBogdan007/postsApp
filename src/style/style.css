@@ -22,6 +22,7 @@
 html, body, #root, .App {
   height: 100%;
   background-color: #E4E7EB;
+  box-sizing: border-box;
 }
 
 .header {
@@ -53,6 +54,7 @@ html, body, #root, .App {
 
 .post {
   width: 300px;
+  height: 200px;
   margin-top: 40px;
   background-color: #fff;
   border-radius: 4px;
@@ -62,6 +64,7 @@ html, body, #root, .App {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 .post-item__title {
   margin-bottom: 10px;
@@ -70,10 +73,14 @@ html, body, #root, .App {
   color: #3C81F6;
   border-bottom: 1px solid #E4E7EB;
   padding-bottom: 4px;
+  overflow: hidden;
+  max-height: 49px;
 }
 .post-item__body {
   border-bottom: 1px solid #E4E7EB;
   padding-bottom: 4px;
+  max-height: 100px;
+  overflow: hidden;
 }
 .post-item__madeby {
   color: #3C81F6;
@@ -108,4 +115,66 @@ html, body, #root, .App {
 .users .user-posts {
   margin-top: 10px;
   color: #3C81F6;
+}
+
+.postOne {
+  background-color: #fff;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+.postOne__comments {
+  color: #3C81F6;
+  font-weight: bold;
+  font-size: 23px;
+  margin-bottom: 14px;
+}
+
+.post-single {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.post-single__title {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #3C81F6;
+  border-bottom: 1px solid #E4E7EB;
+  padding-bottom: 4px;
+}
+.post-single__body {
+  border-bottom: 1px solid #E4E7EB;
+  padding-bottom: 4px;
+  font-size: 19px;
+}
+.post-single__madeby {
+  color: #3C81F6;
+  margin-top: 8px;
+}
+
+.comment {
+  background-color: #fff;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.comment-item {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+.comment-item_avatar {
+  margin-top: 20px;
+  width: 5%;
+  padding-left: 15px;
+}
+.comment-item_descr {
+  width: 95%;
+  padding-left: 10px;
+  border-left: 1px solid #E4E7EB;
+}
+.comment-item__name {
+  color: #3C81F6;
+  font-size: 19px;
+  margin-bottom: 8px;
+  font-weight: bold;
 }

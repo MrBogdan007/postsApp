@@ -27,10 +27,10 @@ function App() {
         <Route path='/about' element={<About/>}></Route>
         <Route path='/contacts' element={<Contact/>}></Route>
         <Route path='/' element={<Posts/>}></Route>
-        <Route path='/users'>
-        <Route path='' element={<Users/>}/>
-        <Route path=':id' element={<PostList/>}/>
-        </Route>
+        <Route path='/:id' element={<PostList/>}></Route>
+       
+        <Route path='/users' element={<Users/>}></Route>
+       
         
         
        </Routes>
