@@ -1,17 +1,22 @@
 import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { fetchPosts } from "../redux/reducers/posts";
-import { SingleUser } from "../types/singleUser";
+import { OnePost } from "../types/users";
+import CommentIcon from '@mui/icons-material/Comment';
+import { useNavigate } from "react-router-dom";
 
-const SinglePost = ({post,madeby}:SingleUser) => {
-   
+const SinglePost = ({post,madeby}:OnePost) => {
+  const navigate = useNavigate();
+const postList = (id:number) => {
+  navigate(`/${id}`)
+}  
+
 return(
-
-   <div className="post">
+   <div onClick={() => postList(post.id)} className="post">
    <div className="post-item" key={post.id}>
      <div className="post-item__title">{post.title}</div>
      <div className="post-item__body">{post.body}</div>
-     <div className="post-item__madeby">{madeby.name}</div>
+     <div className="post-item__madeby">By {madeby.name} <CommentIcon color="primary"/></div>
    </div>
  </div>
 

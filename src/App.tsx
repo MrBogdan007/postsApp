@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from './redux/hooks';
 import { fetchUsers } from './redux/reducers/users';
 import { fetchPosts } from './redux/reducers/posts';
+import PostList from './components/PostList';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -26,7 +27,12 @@ function App() {
         <Route path='/about' element={<About/>}></Route>
         <Route path='/contacts' element={<Contact/>}></Route>
         <Route path='/' element={<Posts/>}></Route>
-        <Route path='/users' element={<Users/>}></Route>
+        <Route path='/users'>
+        <Route path='' element={<Users/>}/>
+        <Route path=':id' element={<PostList/>}/>
+        </Route>
+        
+        
        </Routes>
        </BrowserRouter>
       </header>

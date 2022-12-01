@@ -1,3 +1,5 @@
+import { Post } from "./posts"
+
 export interface User {
   id: number,
   name: string,
@@ -8,7 +10,7 @@ export interface User {
    suite: string,
    city: string,
    zipcode: string
-   get: {
+   geo: {
       lat: string,
       lng: string
    }
@@ -20,4 +22,12 @@ export interface User {
    catchPhrase: string,
    bs: string
   }
+}
+export interface OnePost {
+  post: Post,
+  madeby: User 
+}
+export interface OneUser {
+  user: User,
+  postsLength: number
 }

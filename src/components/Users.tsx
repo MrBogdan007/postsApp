@@ -1,23 +1,23 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../redux/hooks"
 import { fetchUsers } from "../redux/reducers/users";
+import SingleUser from "./SingleUser";
 
 const Users = () => {
   const dispatch = useAppDispatch();
-
   const users = useAppSelector(state => state.userReducer);
-  return (
-    <div>
+  const posts = useAppSelector(state => state.postReducer);
+  return(
+  <div className="container users">
     {
-      users.map(post => 
-        <div key={post.id}>
-          <div>{post.name}</div>
-          <div>{post.username}</div>
-          <div></div>
-        </div>
+      users.map(user => {
+        const postsLength = posts.filter(post => post.userId === user.id).length;
+        return (
+          <SingleUser user={user} postsLength={postsLength}/>
         )
+      })
     }
-  </div>
+    </div>
   )
 }
 

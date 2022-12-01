@@ -3,9 +3,13 @@
    display: flex
    justify-content: space-between
    flex-wrap: wrap
+   
 .post
-   width: 400px
+   width: 300px
    margin-top: 40px
+   background-color: #fff
+   border-radius: 4px
+   padding: 20px
    &-item
       display: flex
       flex-direction: column
@@ -15,4 +19,12 @@
          font-size: 18px
          font-weight: bold
          color: variables.$text-color
+         border-bottom: 1px solid #E4E7EB
+         padding-bottom: 4px
+      &__body
+         border-bottom: 1px solid #E4E7EB
+         padding-bottom: 4px
+      &__madeby
+         color: variables.$text-color
+         margin-top: 8px
 
