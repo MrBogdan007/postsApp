@@ -31,7 +31,7 @@ const Posts = () => {
           ? postList.map((post) => {
               const madeBy = users.find((user) => user.id === post.userId)!;
 
-              return <SinglePost key={post.id} madeby={madeBy} post={post} />;
+              return <SinglePost  key={post.id} idOne={ post.id} madeby={madeBy} post={post} />;
             })
           : "Loading ... "}
       </div>

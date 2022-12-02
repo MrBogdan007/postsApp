@@ -26,7 +26,7 @@ export interface User {
 export interface OnePost {
   post: Post,
   madeby?: User,
-  id?: number
+  idOne?: number
 }
 export interface OneUser {
   user: User,

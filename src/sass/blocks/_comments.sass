@@ -1,8 +1,10 @@
 @use '../variables'
 .comment
    background-color: #fff
-   margin-top: 20px
-   border-radius: 10px
+   border-radius: 4px
+   &:nth-child(3)
+      padding-bottom: 50px
+
    &-item
       display: flex
       justify-content: space-between
@@ -22,3 +24,15 @@
          font-size: 19px
          margin-bottom: 8px
          font-weight: bold
+.comments
+   position: relative
+   max-height: 320px
+   overflow: hidden
+.readMore
+   position: absolute
+   color: variables.$text-color
+   font-size: 19px
+   font-weight: bold
+   bottom: 15px
+   left: 900px
+   
