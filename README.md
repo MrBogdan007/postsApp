@@ -1,0 +1,1 @@
+[Link to gh-pages](http://MrBogdan007.github.io/bof-posts)
