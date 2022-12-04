@@ -1,8 +1,19 @@
+@use '../variables'
 .header
    display: flex
    justify-content: space-between
    background-color: #1F2937
    padding: 10px
+   &__logo
+      font-size: 24px
+      font-weight: bold
+      &:hover
+         cursor: pointer
+   &__logo_1
+      color: variables.$text-color
+   &__logo_2
+      color: #fff
+      margin-left: 5px
    &-nav
       display: flex
       justify-content: flex-end

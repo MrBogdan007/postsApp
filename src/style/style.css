@@ -31,6 +31,20 @@ html, body, #root, .App {
   background-color: #1F2937;
   padding: 10px;
 }
+.header__logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+.header__logo:hover {
+  cursor: pointer;
+}
+.header__logo_1 {
+  color: #3C81F6;
+}
+.header__logo_2 {
+  color: #fff;
+  margin-left: 5px;
+}
 .header-nav {
   display: flex;
   justify-content: flex-end;
@@ -59,6 +73,9 @@ html, body, #root, .App {
   background-color: #fff;
   border-radius: 4px;
   padding: 20px;
+}
+.post:hover {
+  cursor: pointer;
 }
 .post-item {
   display: flex;
@@ -185,8 +202,7 @@ html, body, #root, .App {
 }
 
 .comments {
-  position: relative;
-  max-height: 320px;
+  max-height: 380px;
   overflow: hidden;
 }
 
@@ -195,8 +211,8 @@ html, body, #root, .App {
   color: #3C81F6;
   font-size: 19px;
   font-weight: bold;
-  bottom: 15px;
   left: 900px;
+  bottom: 230px;
 }
 
 .other {

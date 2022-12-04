@@ -13,7 +13,6 @@ import PostList from './components/PostList';
 
 function App() {
   const dispatch = useAppDispatch();
-  
   useEffect(() => {
     dispatch(fetchPosts());
     dispatch(fetchUsers());

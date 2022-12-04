@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { fetchPosts } from "../redux/reducers/posts";
+import { createPost, fetchPosts } from "../redux/reducers/posts";
 
 import { fetchUsers } from "../redux/reducers/users";
 import SinglePost from "./SinglePost";
@@ -8,15 +8,25 @@ import SinglePost from "./SinglePost";
 const Posts = () => {
   const dispatch = useAppDispatch();
   const posts = useAppSelector((state) => state.postReducer);
-
   const users = useAppSelector((state) => state.userReducer);
+  const [postTitle, setPostTitle] = useState('')
+  const [postBody, setPostBody] = useState('')
   const [search, setSearch] = useState("");
 
   const onInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
   const postList = posts.filter((item) => item.title.includes(search));
+  
 
+  const addPost = () => {
+
+    dispatch(createPost({
+      title:  postTitle,
+      body: postBody,
+    }));
+  }
+    
   return (
     <>
       <div className="search">
@@ -26,8 +36,16 @@ const Posts = () => {
           placeholder="Search for a post"
         />
       </div>
+      <div className="container">
+      <label htmlFor="text">Change title: </label>
+      <input style={{display: 'block'}} type="text" onChange={(e) => setPostTitle(e.target.value)}/>
+      <label  style={{display: 'block'}} htmlFor="text">Change description: </label>
+      <input style={{display: 'block'}} type="text" onChange={(e) => setPostBody(e.target.value)}/>
+      <button onClick={addPost}>Create post</button>
+      </div>
+
       <div className="posts container">
-        {users.length > 0
+        {posts.length > 0
           ? postList.map((post) => {
               const madeBy = users.find((user) => user.id === post.userId)!;
 
