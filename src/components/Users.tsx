@@ -13,7 +13,7 @@ const Users = () => {
       users.map(user => {
         const postsLength = posts.filter(post => post.userId === user.id).length;
         return (
-          <SingleUser user={user} postsLength={postsLength}/>
+          <SingleUser user={user} id={user.id} postsLength={postsLength}/>
         )
       })
     }

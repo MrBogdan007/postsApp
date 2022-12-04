@@ -10,12 +10,16 @@ import { useAppDispatch, useAppSelector } from './redux/hooks';
 import { fetchUsers } from './redux/reducers/users';
 import { fetchPosts } from './redux/reducers/posts';
 import PostList from './components/PostList';
+import UserList from './components/UserList';
+import { fetchComment } from './redux/reducers/comments';
 
 function App() {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(fetchPosts());
     dispatch(fetchUsers());
+    dispatch(fetchComment());
+ 
   },[])
 
   return (
@@ -28,9 +32,8 @@ function App() {
         <Route path='/contacts' element={<Contact/>}></Route>
         <Route path='/posts/' element={<Posts/>}></Route>
         <Route path='/posts/:id' element={<PostList/>}></Route>
-       
         <Route path='/users' element={<Users/>}></Route>
-       
+        <Route path='/users/:id' element={<UserList/>}></Route>
         
         
        </Routes>

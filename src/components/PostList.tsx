@@ -65,7 +65,7 @@ const PostList = () => {
           <div className="post-single__title">{onePost.title}</div>
           <div className="post-single__body">{onePost.body}</div>
           <div className="post-single_madeby">
-              By {madeBy!.name} <CommentIcon color="primary" />
+              By {madeBy!.name} 
           </div>
         </div>
       </div>

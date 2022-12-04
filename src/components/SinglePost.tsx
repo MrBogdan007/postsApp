@@ -12,7 +12,7 @@ import Avatar from "@mui/material/Avatar";
 
 const SinglePost = ({ post, madeby, idOne }: OnePost) => {
   const navigate = useNavigate();
-
+  const comments = useAppSelector((state) => state.commentReducer);
   const { id } = useParams();
   const posts = useAppSelector((state) => state.postReducer);
   const users = useAppSelector((state) => state.userReducer);
@@ -21,7 +21,7 @@ const SinglePost = ({ post, madeby, idOne }: OnePost) => {
   const postList = () => {
     navigate(`/posts/${idOne}`);
   };
-
+  const commentsShow = comments.filter((comment) => comment.postId === idOne); 
   return (
     <>
       <div onClick={postList} className="post">
@@ -29,7 +29,7 @@ const SinglePost = ({ post, madeby, idOne }: OnePost) => {
           <div className="post-item__title">{post.title}</div>
           <div className="post-item__body">{post.body}</div>
           <div className="post-item__madeby">
-            By {madeby ? madeby.name : ""} <CommentIcon color="primary" />
+            By {madeby ? madeby.name : ""} <CommentIcon color="primary" />{commentsShow.length}
           </div>
         </div>
       </div>

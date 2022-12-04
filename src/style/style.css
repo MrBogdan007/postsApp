@@ -109,6 +109,9 @@ html, body, #root, .App {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+.users:hover {
+  cursor: pointer;
+}
 .users ul {
   list-style: none;
 }
@@ -117,7 +120,7 @@ html, body, #root, .App {
   margin-top: 40px;
   background-color: #fff;
   border-radius: 4px;
-  padding: 20px;
+  padding: 12px 15px 12px 15px;
 }
 .users .user-title {
   font-weight: bold;
@@ -140,6 +143,7 @@ html, body, #root, .App {
   margin-top: 30px;
   border-radius: 10px;
   padding: 20px;
+  min-height: 120px;
 }
 .postOne__comments {
   color: #3C81F6;
@@ -183,6 +187,10 @@ html, body, #root, .App {
   display: flex;
   justify-content: space-between;
   margin-left: 10px;
+}
+.comment-item__body {
+  min-height: 35px;
+  overflow: hidden;
 }
 .comment-item_avatar {
   margin-top: 20px;

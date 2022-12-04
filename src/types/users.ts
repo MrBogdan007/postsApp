@@ -30,5 +30,6 @@ export interface OnePost {
 }
 export interface OneUser {
   user: User,
-  postsLength: number
+  postsLength: number,
+  id?: number
 }

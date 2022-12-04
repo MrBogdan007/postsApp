@@ -12,12 +12,12 @@ const Posts = () => {
   const [postTitle, setPostTitle] = useState('')
   const [postBody, setPostBody] = useState('')
   const [search, setSearch] = useState("");
-
+  const comments = useAppSelector((state) => state.commentReducer);
   const onInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
   const postList = posts.filter((item) => item.title.includes(search));
-  
+
 
   const addPost = () => {
 
@@ -26,7 +26,7 @@ const Posts = () => {
       body: postBody,
     }));
   }
-    
+  
   return (
     <>
       <div className="search">
@@ -49,7 +49,7 @@ const Posts = () => {
           ? postList.map((post) => {
               const madeBy = users.find((user) => user.id === post.userId)!;
 
-              return <SinglePost  key={post.id} idOne={ post.id} madeby={madeBy} post={post} />;
+              return <SinglePost  key={post.id} idOne={post.id} madeby={madeBy} post={post} />;
             })
           : "Loading ... "}
       </div>

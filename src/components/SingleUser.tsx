@@ -1,9 +1,14 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { OneUser } from '../types/users'
 
-const SingleUser = ({user,postsLength}:OneUser) => {
+const SingleUser = ({user,postsLength,id}:OneUser) => {
+  const navigate = useNavigate()
+  const showUserList = () => {
+    navigate(`/users/${id}`)
+  }
   return (
-       <ul className="user" key={user.id}>
+       <ul onClick={showUserList} className="user" key={user.id}>
          <li className="user-title" >{user.name}</li>
          <div className="user-body">
          <li>{user.username}</li>
